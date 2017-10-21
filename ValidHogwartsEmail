@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static String isValid(String email) {
+       if(email.contains("@hogwarts.com")){
+           
+           String[] un = email.split("@");
+           if(un[0].length() == 5 && un[1].equals("hogwarts.com")){
+              
+               for(int i=0;i<5;i++){
+                   Character ch = un[0].charAt(i);
+                   if(Character.isLowerCase(ch)){
+                       
+                   }else{
+                       return "No";
+                   }
+               }
+               return "Yes";
+               
+           }else{
+               return "No";
+           }
+            
+           
+       }else{
+           return "No";
+       }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        String result = isValid(s);
+        System.out.println(result);
+        in.close();
+    }
+}
